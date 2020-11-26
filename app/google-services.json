@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "192285437466",
+    "firebase_url": "https://calendarevent-268d2.firebaseio.com",
+    "project_id": "calendarevent-268d2",
+    "storage_bucket": "calendarevent-268d2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:192285437466:android:c8a5a5371f522202256ba3",
+        "android_client_info": {
+          "package_name": "com.pascal.calendereventapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "192285437466-0t8v24h7cja033aniuhlastmimmpe831.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pascal.calendereventapp",
+            "certificate_hash": "d54a3905894264e06b291fef18df0cdb11bb4d5f"
+          }
+        },
+        {
+          "client_id": "192285437466-q8q7bnlmq86b06egnd4cffa3q29pmruj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUo9rUNUBMpo2ZedUKXyaKxaaZBeRfRGY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "192285437466-q8q7bnlmq86b06egnd4cffa3q29pmruj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
