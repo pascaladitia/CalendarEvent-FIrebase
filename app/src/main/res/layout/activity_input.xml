@@ -44,6 +44,7 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:hint="Tanggal mulai"
+            android:inputType="date"
             android:padding="6dp"
             android:textColor="#7B7C7E"
             android:textSize="20sp" />
@@ -63,6 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:inputType="date"
             android:hint="Tanggal Akhir"
             android:padding="6dp"
             android:textColor="#7B7C7E"
