@@ -48,13 +48,18 @@ class InputActivity : AppCompatActivity() {
         val tanggal2 = input_tanggal2.text.toString()
 
         if (tanggal.isNotEmpty() && tanggal2.isNotEmpty()) {
-            val event = Kehadiran(tanggal, tanggal2, "Hadir", "#FF00FF00")
-            val key = myRef?.push()?.key
-            myRef?.child(key ?: "")?.setValue(event)
-            finish()
-            showToast("Siswa Hadir")
+            if (tanggal.equals(tanggal2)) {
+                showToast("Tanggal tidak boleh sama")
+            } else {
+                val event = Kehadiran(tanggal, tanggal2, "Hadir", "#FF00FF00")
+                val key = myRef?.push()?.key
+                myRef?.child(key ?: "")?.setValue(event)
+                finish()
+                showToast("Siswa Hadir")
+            }
+        } else {
+            showToast("Tanggal harus diisi")
         }
-        showToast("Tanggal harus diisi")
     }
 
     private fun updateAlpa() {
@@ -62,11 +67,15 @@ class InputActivity : AppCompatActivity() {
         val tanggal2 = input_tanggal2.text.toString()
 
         if (tanggal.isNotEmpty() && tanggal2.isNotEmpty()) {
-            val event = Kehadiran(tanggal, tanggal2, "Alpa", "#FFFF0000")
-            val key = myRef?.push()?.key
-            myRef?.child(key ?: "")?.setValue(event)
-            finish()
-            showToast("Siswa Alpa")
+            if (tanggal.equals(tanggal2)) {
+                showToast("Tanggal tidak boleh sama")
+            } else {
+                val event = Kehadiran(tanggal, tanggal2, "Alpa", "#FFFF0000")
+                val key = myRef?.push()?.key
+                myRef?.child(key ?: "")?.setValue(event)
+                finish()
+                showToast("Siswa Alpa")
+            }
         } else {
             showToast("Tanggal harus diisi")
         }
@@ -77,11 +86,15 @@ class InputActivity : AppCompatActivity() {
         val tanggal2 = input_tanggal2.text.toString()
 
         if (tanggal.isNotEmpty() && tanggal2.isNotEmpty()) {
-            val event = Kehadiran(tanggal, tanggal2, "Sakit", "#FFFFFF00")
-            val key = myRef?.push()?.key
-            myRef?.child(key ?: "")?.setValue(event)
-            finish()
-            showToast("Siswa Sakit")
+            if (tanggal.equals(tanggal2)) {
+                showToast("Tanggal tidak boleh sama")
+            } else {
+                val event = Kehadiran(tanggal, tanggal2, "Sakit", "#FFFFFF00")
+                val key = myRef?.push()?.key
+                myRef?.child(key ?: "")?.setValue(event)
+                finish()
+                showToast("Siswa Sakit")
+            }
         } else {
             showToast("Tanggal harus diisi")
         }

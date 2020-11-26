@@ -1,5 +1,6 @@
 package com.pascal.calendereventapp.view
 
+import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
@@ -56,6 +57,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, InputActivity::class.java)
             startActivity(intent)
         }
+
+        main_refresh.setOnClickListener {
+            finish()
+            startActivity(intent)
+        }
     }
 
     private fun showEvent() {
@@ -76,8 +82,31 @@ class MainActivity : AppCompatActivity() {
             dialog_kehadiran.text = "${eventItem?.title}"
             dialog_tanggal.text = "Tanggal : ${eventItem?.start}"
 
+            dialog_delete.setOnClickListener {
+                delete(eventItem)
+                this?.dismiss()
+            }
+
             dialog_Cancel.setOnClickListener {
                 this?.dismiss()
+            }
+        }.show()
+    }
+
+    private fun delete(eventItem: EventItem?) {
+        AlertDialog.Builder(this).apply {
+            setTitle("Hapus")
+            setMessage("Yakin ingin menghapus Event?")
+            setCancelable(false)
+
+            setPositiveButton("Ya") {dialog, which ->
+                myRef?.child(eventItem?.id ?: "")?.removeValue()
+                finish()
+                startActivity(intent)
+                dialog?.dismiss()
+            }
+            setNegativeButton("Batal") {dialog, which ->
+                dialog?.dismiss()
             }
         }.show()
     }
